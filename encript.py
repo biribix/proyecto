@@ -3,13 +3,13 @@ from tkinter import messagebox, filedialog
 from cryptography.fernet import Fernet
 from pathlib import Path
 
-"""Hace que el boton copiar copie en el portampapeles la contraseña"""
+"""Hace que el botón copiar copie en el portapapeles la key"""
 def copiar(ventana, contraseña):
     ventana.clipboard_clear()
     ventana.clipboard_append(contraseña)
     ventana.update()
 
-"""Genera la key y crear la ventana"""
+"""Genera la key y crear una ventana para poder verla"""
 def clave():
     # Genera la key y crea una ventana
     contraseña = Fernet.generate_key()
@@ -140,3 +140,4 @@ tk.Button(menu, text="Encriptar", bg="white", font=("Arial 20"), width=20, heigh
 tk.Button(menu, text="Desencriptar", bg="white", font=("Arial 20"), width=20, height=3, command=seleccionar_d).pack(pady = 5)
 
 menu.mainloop()
+
